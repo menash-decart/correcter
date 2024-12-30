@@ -8,8 +8,8 @@ Description:
 - Displays a badge in the top-right corner to indicate processing status.
 
 Usage:
-- Command + c: Correction (default mode)
-- Ctrl + r: Rephrasing (triggered with --rephrase)
+- Command + q: Correction (default mode)
+- Ctrl + t: Rephrasing (triggered with --rephrase)
 """
 
 import os
