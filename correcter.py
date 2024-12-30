@@ -19,6 +19,7 @@ import pyperclip
 import openai
 import pyautogui
 import time
+from Foundation import NSUserNotification, NSUserNotificationCenter
 
 # Configure Logging
 logging.basicConfig(
@@ -37,16 +38,17 @@ if not openai.api_key:
 
 def show_notification(title, message):
     """
-    Display a macOS notification in the top-right corner.
-
-    Args:
-        title (str): The title of the notification.
-        message (str): The message content of the notification.
+    Display a macOS notification without sound using pyobjc.
+    :param title: The title of the notification.
+    :param message: The message body of the notification.
     """
-    try:
-        os.system(f'osascript -e \'display notification "{message}" with title "{title}"\'')
-    except Exception as e:
-        logging.error(f"Error showing notification: {e}")
+    notification = NSUserNotification.alloc().init()
+    notification.setTitle_(title)
+    notification.setInformativeText_(message)
+    notification.setSoundName_(None)  # Disable sound
+
+    center = NSUserNotificationCenter.defaultUserNotificationCenter()
+    center.deliverNotification_(notification)
 
 def process_text(mode='correct'):
     """
@@ -96,8 +98,8 @@ def process_text(mode='correct'):
         logging.info("Text processed successfully. Updating clipboard.")
 
         # Show a notification that processing has completed
-        show_notification("Text Processing", "Text has been processed and copied to clipboard.")
-
+        show_notification("Correcter", mode + " mode was executed successfully.")
+        
         # Simulate Command+V to paste the result
         logging.info("Simulating Command+V to paste the result.")
         pyautogui.hotkey('command', 'v')
