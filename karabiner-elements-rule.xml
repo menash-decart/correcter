@@ -1,0 +1,21 @@
+{
+    "description": "Run text_corrector script with environment",
+    "manipulators": [
+        {
+            "from": {
+                "key_code": "q",
+                "modifiers": { "mandatory": ["left_control"] }
+            },
+            "to": [{ "shell_command": "/Users/<username>/Scripts/correcter/correcter_launcher.sh" }],
+            "type": "basic"
+        },
+        {
+            "from": {
+                "key_code": "t",
+                "modifiers": { "mandatory": ["left_control"] }
+            },
+            "to": [{ "shell_command": "/Users/<username>/Scripts/correcter/correcter_launcher.sh --rephrase" }],
+            "type": "basic"
+        }
+    ]
+}
