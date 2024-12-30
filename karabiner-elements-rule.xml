@@ -6,7 +6,7 @@
                 "key_code": "q",
                 "modifiers": { "mandatory": ["left_control"] }
             },
-            "to": [{ "shell_command": "/Users/<username>/Scripts/correcter/correcter_launcher.sh" }],
+            "to": [{ "shell_command": "~/Scripts/correcter/correcter_launcher.sh" }],
             "type": "basic"
         },
         {
@@ -14,7 +14,7 @@
                 "key_code": "t",
                 "modifiers": { "mandatory": ["left_control"] }
             },
-            "to": [{ "shell_command": "/Users/<username>/Scripts/correcter/correcter_launcher.sh --rephrase" }],
+            "to": [{ "shell_command": "~/Scripts/correcter/correcter_launcher.sh --rephrase" }],
             "type": "basic"
         }
     ]
