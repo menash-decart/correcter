@@ -4,4 +4,4 @@
 export OPENAI_API_KEY=$(launchctl getenv OPENAI_API_KEY)
 
 # Run the Python script
-python3 /Users/menash/Scripts/correcter/correcter.py "$@"
+python3 ~/Scripts/correcter/correcter.py "$@"
